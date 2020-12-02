@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import NewsList from "../components/newsList";
 
 const IndexPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -10,9 +11,9 @@ const IndexPage = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Grow Factory" />
-      <h1>Welcome to the Grow Factory</h1>
+      <h1>Most Recent - New Feed</h1>
       <p>You just starting taking a route that does exist....</p>
-      <a href="/blog" >NEWS</a>
+      <NewsList />
     </Layout>
   )
 }
