@@ -1,9 +1,9 @@
 import React from "react"
-import { Nav, Navbar, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
+import { Nav, Navbar } from 'react-bootstrap'
 import icon from '../../content/assets/grow_factory_icon.png';
 const NavBar = () => {
   return (
-    <Navbar variant="light" style={{ height: 100 }}>
+    <Navbar sticky="top" bg="light" variant="light" expand="lg">
     <Navbar.Brand href="/">
     <img
         alt=""
@@ -25,7 +25,6 @@ const NavBar = () => {
       </Nav>
       <Nav inline>
         <Nav.Link href="/">Login</Nav.Link>
-          <Nav.Link>{' | '}</Nav.Link>
         <Nav.Link href="/">Support</Nav.Link>
       </Nav>
     </Navbar.Collapse>
