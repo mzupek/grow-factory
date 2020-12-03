@@ -1,9 +1,8 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Container from 'react-bootstrap/Container';
 import NavBar from  '../components/navBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './../../content/assets/grow_factory_logo-2.png'
 
 const Layout = ({ isHomePage, children }) => {
   const {
@@ -22,12 +21,10 @@ const Layout = ({ isHomePage, children }) => {
   `)
 
   return (
-    <Container data-is-root-path={isHomePage}>
+    <Container fluid style={{paddingRight: 0, paddingLeft: 0 }}>
     <NavBar />
-
-      <main>{children}</main>
-
-      <footer>
+    <main>{children}</main>
+      <footer className="text-center">
         © {new Date().getFullYear()}, The Grow Factory
       </footer>
     </Container>

@@ -1,30 +1,33 @@
 import React from "react"
 import { Nav, Navbar, NavDropdown, Form, FormControl, Button } from 'react-bootstrap'
-
+import icon from '../../content/assets/grow_factory_icon.png';
 const NavBar = () => {
   return (
-    <Navbar bg="light" expand="lg">
-    <Navbar.Brand href="#home">THE GROW FACTORY</Navbar.Brand>
+    <Navbar variant="light" style={{ height: 100 }}>
+    <Navbar.Brand href="/">
+    <img
+        alt=""
+        src={icon}
+        width="30"
+        height="30"
+        className="d-inline-block align-top"
+      />{' '}
+    GROW FACTORY</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto">
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/blog">Grow</Nav.Link>
+        <Nav.Link href="/">Feed</Nav.Link>
         <Nav.Link href="/">Categories</Nav.Link>
-        <NavDropdown title="Factory" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-        </NavDropdown>
         <Nav.Link href="/">Join</Nav.Link>
         <Nav.Link href="/">Contact</Nav.Link>
       </Nav>
-      <Form inline>
-        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-        <Button variant="outline-success">Search</Button>
-      </Form>
+      <Nav inline>
+        <Nav.Link href="/">Login</Nav.Link>
+          <Nav.Link>{' | '}</Nav.Link>
+        <Nav.Link href="/">Support</Nav.Link>
+      </Nav>
     </Navbar.Collapse>
   </Navbar>
   )
