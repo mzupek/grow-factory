@@ -34,11 +34,17 @@ if (posts !== undefined) {
     return (
         <Row>
             {posts.map(post => (
-              <Col key={post.id}>
+              <Col style={{marginTop: 40, marginBottom: 40, }} key={post.id}>
               <Row>
-                <Col style={{height: 150, width: 150, margin: 20, backgroundImage: `url(${post['featured_image_src']})` }}>
+                <Col>
+                <img
+                    className="d-block w-100"
+                    src={post['featured_image_src']}
+                    alt="First slide"
+                    />
+
                 </Col>
-                <Col style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <Col lassName="d-block w-100" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <strong style={{ color: '#ffffff' }}>{`${post.title.rendered.substring(0, 25)}...`}</strong>    
                 </Col>     
               </Row>

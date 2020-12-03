@@ -9,35 +9,35 @@ const MainJumbotron = () => {
 <Carousel>
   <Carousel.Item>
     <img
-      className="d-block w-100"
+      className="d-block"
       src={slider1}
       alt="First slide"
     />
-    <Carousel.Caption>
+    <Carousel.Caption style={{ top: '35%', bottom: 0 }} >
       <h2 style={{ color: '#ffffff'}}>The Grow Factory Garden</h2>
       <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-100"
+      className="d-block"
       src={slider2}
       alt="Third slide"
     />
 
-    <Carousel.Caption>
+    <Carousel.Caption style={{ top: '35%', bottom: 0 }}>
       <h2 style={{ color: '#ffffff'}}>Cultivation News, Goods, Tips & Tricks</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-100"
+      className="d-block"
       src={slider3}
       alt="Third slide"
     />
 
-    <Carousel.Caption>
+    <Carousel.Caption style={{ top: '35%', bottom: 0 }}>
       <h2 style={{ color: '#ffffff'}}>The Opinion Collection</h2>
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </Carousel.Caption>

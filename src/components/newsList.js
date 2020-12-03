@@ -5,7 +5,6 @@ import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 const axios = require('axios').default;
 
-const MAX_LENGTH = 50;
 
 class NewsList extends React.Component {
 constructor(props) {
@@ -38,11 +37,13 @@ if (posts !== undefined) {
               <Card style={{ marginBottom: 10 }}>
                 <Card.Img variant="top" src={post['featured_image_src']} />
                 <Card.Body>
-                    <Card.Title style={{ height: 75 }}>{`${post.title.rendered.substring(0, MAX_LENGTH)}...`}</Card.Title>
+                    <Card.Title style={{ height: 75, fontSize: 16 }}>{`${post.title.rendered.substring(0, 50)}...`}</Card.Title>
                     <Card.Text>
                     
                     </Card.Text>
+                    <footer>
                     <Button target="_blank" variant="success" href={encodeURI(post['postMeta']['source_link'])} >Read More</Button>
+                    </footer>
                 </Card.Body>
                 </Card>
               </Col>
