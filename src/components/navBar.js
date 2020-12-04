@@ -23,7 +23,7 @@ const NavBar = () => {
         <Nav.Link href="/">Join</Nav.Link>
         <Nav.Link href="/">Contact</Nav.Link>
       </Nav>
-      <Nav inline>
+      <Nav>
         <Nav.Link href="/">Login</Nav.Link>
         <Nav.Link href="/">Support</Nav.Link>
       </Nav>

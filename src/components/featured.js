@@ -1,11 +1,9 @@
 import React from "react"
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import timeSince from '../utilities/timeSince'
 const axios = require('axios').default;
 
-const MAX_LENGTH = 50;
 
 class Featured extends React.Component {
 constructor(props) {
@@ -18,7 +16,7 @@ constructor(props) {
 
 componentDidMount() {
     console.log('component did mount');
-    axios.get('https://grow-factory.com/wp-json/wp/v2/posts?per_page=4').then(
+    axios.get('https://grow-factory.com/wp-json/wp/v2/posts?per_page=4&_embed=1').then(
     (response) => {
         this.setState({ data: response.data });
         console.log(response.data);
@@ -29,25 +27,23 @@ componentDidMount() {
 render() {
 const { data } = this.state;
 const posts = data;
-console.log(posts);
 if (posts !== undefined) {
     return (
         <Row>
             {posts.map(post => (
-              <Col style={{marginTop: 40, marginBottom: 40, }} key={post.id}>
-              <Row>
-                <Col>
+              <Col className="text-center" style={{marginTop: 40, marginBottom: 40 }} key={post.id}>
+              <Row style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
                 <img
-                    className="d-block w-100"
+                    className="d-block"
                     src={post['featured_image_src']}
-                    alt="First slide"
-                    />
-
-                </Col>
-                <Col lassName="d-block w-100" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                <strong style={{ color: '#ffffff' }}>{`${post.title.rendered.substring(0, 25)}...`}</strong>    
-                </Col>     
+                    alt="featured img"
+                    />    
               </Row>
+              <Row className="d-block w" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: 10 }}>
+              <p><strong style={{ backgroundColor: 'blue', padding: 3.5, color: '#ffffff', fontSize: 12 }}>{post['_embedded']['wp:term'][0][0].name}</strong> </p>  
+              <p><strong style={{ padding: 3.5, color: '#ffffff', fontSize: 12 }}>{`${post.title.rendered.substring(0, 50)}...`}</strong> </p> 
+              <p style={{ color: 'white', fontSize: 12, fontStyle: 'italic', opacity: 0.6 }}>{timeSince(new Date(post.date))}</p> 
+              </Row> 
               </Col>
              
             ))}
